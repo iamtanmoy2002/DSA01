@@ -6,7 +6,7 @@ Queue* creat_queue(int size)
     New_q->size=size;
     New_q->front=-1;
     New_q->rear=-1;
-    New_q->arr=(int*)malloc(New_q->size*sizeof(int));
+    New_q->arr=(int*)malloc(size*sizeof(int));
     return New_q;
 }
 
@@ -38,12 +38,11 @@ void enqueue(Queue* qu,int value)
         return;
     }
 
-    if((qu->front==-1)&(qu->rear==-1))
-    {
+    if(qu->front==-1)
         qu->front=0;
-        qu->rear++;
-        qu->arr[qu->rear]=value;
-    }
+    
+    qu->rear++;
+    qu->arr[qu->rear]=value;
 }
 
 int dequeue(Queue* qu)
