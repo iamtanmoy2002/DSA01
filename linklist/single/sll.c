@@ -114,7 +114,7 @@ void del_at(Node** head,int posi)
     Node* temp;
     int i=0;
     Node* curr= *head;
-    while (i<posi)
+    while (i<posi-1)
     {
         curr=curr->next;
         i++;
